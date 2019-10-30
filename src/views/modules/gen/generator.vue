@@ -78,9 +78,9 @@
       return {
         searchForm: {
           tableName: '',
-          projectName: 'GS',
+          projectName: 'platform-plus',
           packageName: 'com.platform.modules',
-          author: 'GDJS'
+          author: '李鹏军'
         },
         dataList: [],
         pageIndex: 1,

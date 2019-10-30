@@ -18,7 +18,7 @@
         mode="horizontal">
         <el-menu-item index="1">
           <el-badge value="hot">
-            <a href="//fly2you.cn/" target="_blank">官方社区</a>
+            <a href="//www.k-banker.cn/" target="_blank">壹号珠宝</a>
           </el-badge>
         </el-menu-item>
         <el-menu-item index="2" @click="$router.push({ name: 'theme' })">

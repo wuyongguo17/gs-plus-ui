@@ -4,11 +4,7 @@
       <div class="site-content">
         <div class="brand-info">
           <h2 class="brand-info__text">服务金管理平台</h2>
-<<<<<<< HEAD
-          <p class="brand-info__intro">platform-plus-ui</p>
-=======
           <p class="brand-info__intro">gs-plus-ui</p>
->>>>>>> origin/develop
         </div>
         <div class="login-main">
           <h3 class="login-title">管理员登录</h3>

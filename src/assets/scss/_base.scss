@@ -342,14 +342,23 @@ img {
         right: 0;
         z-index: 931;
         height: 40px;
-        padding: 0 12px;
+        // padding: 0 12px;
         font-size: 16px;
         line-height: 40px;
         background-color: $content--background-color;
         cursor: pointer;
-        .el-icon--right {
-          margin-left: 0;
-        }
+		.site-tabs__tools_span{
+			width: 40px;
+			height: 40px;
+			display: flex;
+			justify-content: center;
+			align-content: center;
+			.el-icon--right {
+				line-height: 40px;
+				margin-left: 0;
+			}
+		}
+        
       }
     }
   }

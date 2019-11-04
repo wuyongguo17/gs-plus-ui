@@ -7,11 +7,16 @@
       :closable="true"
       @tab-click="selectedTabHandle"
       @tab-remove="removeTabHandle">
-      <el-dropdown class="site-tabs__tools" :show-timeout="0">
-        <i class="el-icon-arrow-down el-icon--right"></i>
+      <el-dropdown class="site-tabs__tools" trigger="click">
+		<span class="site-tabs__tools_span">
+			<i class="el-icon-arrow-down el-icon--right"></i>
+		</span>
+        <!-- <i class="el-icon-arrow-down el-icon--right"></i> -->
         <el-dropdown-menu slot="dropdown">
           <el-dropdown-item @click.native="tabsCloseCurrentHandle">关闭当前标签页</el-dropdown-item>
           <el-dropdown-item @click.native="tabsCloseOtherHandle">关闭其它标签页</el-dropdown-item>
+		  <el-dropdown-item @click.native="tabsCloseLeftHandle">关闭左侧标签页</el-dropdown-item>
+		  <el-dropdown-item @click.native="tabsCloseRightHandle">关闭右侧标签页</el-dropdown-item>
           <el-dropdown-item @click.native="tabsCloseAllHandle">关闭全部标签页</el-dropdown-item>
           <el-dropdown-item @click.native="tabsRefreshCurrentHandle">刷新当前标签页</el-dropdown-item>
         </el-dropdown-menu>
@@ -44,7 +49,7 @@
 
 <script>
   import {isURL} from '@/utils/validate'
-
+  import {deepClone} from '@/utils/util.js'
   export default {
     data () {
       return {}
@@ -115,6 +120,22 @@
       tabsCloseCurrentHandle () {
         this.removeTabHandle(this.mainTabsActiveName)
       },
+	   // tabs, 关闭左侧
+	  tabsCloseLeftHandle(){
+		  let index = this.mainTabs.findIndex(o => {return o.name === this.mainTabsActiveName})
+		  if(index === 0) return
+		  let arr = deepClone(this.mainTabs)
+		  arr.splice(0,index)
+		  this.mainTabs = arr
+	  },
+	  // tabs, 关闭右侧
+	  tabsCloseRightHandle(){
+	  		let index = this.mainTabs.findIndex(o => {return o.name === this.mainTabsActiveName})
+	  		if(index === this.mainTabs.length - 1) return
+			let arr = deepClone(this.mainTabs)
+	  		arr.splice(index + 1,this.mainTabs.length - 1 - index)
+			this.mainTabs = arr
+	  },
       // tabs, 关闭其它
       tabsCloseOtherHandle () {
         this.mainTabs = this.mainTabs.filter(item => item.name === this.mainTabsActiveName)

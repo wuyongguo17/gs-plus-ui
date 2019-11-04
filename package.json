@@ -1,14 +1,19 @@
 {
-  "name": "GS-ui",
+  "name": "platform-plus-ui",
   "version": "1.0.0",
   "description": "服务金管理平台",
-  "author": "GDJS <gdjs@k-banker.cn>",
+  "author": "gdjs <gdjs@kbanker.com>",
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
     "lint": "eslint --ext .js,.vue src",
     "build": "gulp"
+  },
+  "babel":{
+	  "presets":[
+		  "stage-2"
+	  ]
   },
   "dependencies": {
     "axios": "^0.18.0",

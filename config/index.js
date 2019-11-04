@@ -13,11 +13,11 @@ module.exports = {
     assetsPublicPath: '/',
     // 代理列表, 是否开启代理通过[./dev.env.js]配置
     proxyTable: devEnv.OPEN_PROXY === false ? {} : {
-      '/gs-plus': {
-        target: 'http://localhost:8888/gs-admin',
+      '/gs-admin': {
+        target: 'http://192.168.6.55:9001/gs-admin',
         changeOrigin: true,
         pathRewrite: {
-          '^/gs-plus': '/'
+          '^/gs-admin': '/'
         }
       }
     },
